@@ -12,7 +12,7 @@
         <fieldset class="fieldset__name">
           <label for="title">Заголовок объявления</label>
           <input
-            type="name"
+            type="text"
             id="title"
             placeholder="Заголовок"
             class="input__title"
@@ -21,6 +21,24 @@
         </fieldset>
         <button type="submit" class="submit__button">Отправить</button>
       </form>
+      <script src="https://telegram.org/js/telegram-web-app.js"></script>
+      <script>
+        let telegram = window.Telegram.WebApp;
+        let name_of_title = document.getElementById("title");
+        let submit_button = document.getElementById("submit");
+        telegram.expand()
+
+        submit_button.addEventListener("click", () => {
+          let name = document.getElementById("title").value;
+
+          let data = {
+            name: name
+          }
+
+          telegram.sendData(JSON.stringify(data));
+          telegram.close();
+        });
+      </script>
     </main>
   </body>
 </html>
