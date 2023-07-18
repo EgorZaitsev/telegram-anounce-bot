@@ -1,6 +1,6 @@
 class FormSend {
   constructor(form) {
-    if (!(element instanceof HTMLElement)) {
+    if (!(form instanceof HTMLElement)) {
       throw new Error("Not an element");
     }
 
@@ -17,8 +17,8 @@ class FormSend {
     const target = e.target;
 
     for (let i = 0; i < target.elements.length; i++) {
-      let element = form.elements[i];
-      if (element.tagName.toLowerCase() !== "button") {
+      let element = target.elements[i];
+      if (element.tagName.toLowerCase() === "input") {
         this.data[element.name] = element.value;
       }
     }
