@@ -1,6 +1,6 @@
 class FormSend {
   constructor(form) {
-    if (!(element instanceof HTMLElement)) {
+    if (!(form instanceof HTMLElement)) {
       throw new Error("Not an element");
     }
 
