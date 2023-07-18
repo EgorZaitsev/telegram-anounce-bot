@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -28,3 +29,49 @@
     <script src="src/scripts/script.js"></script>
   </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create anounce</title>
+  </head>
+  <body>
+    <main class="main">
+      <form class="form">
+        <fieldset class="fieldset__name">
+          <label for="title">Заголовок объявления</label>
+          <input
+            type="text"
+            id="title"
+            placeholder="Заголовок"
+            class="input__title"
+            required
+          />
+        </fieldset>
+        <button type="submit" id="submit" class="submit__button">Отправить</button>
+      </form>
+      <script src="https://telegram.org/js/telegram-web-app.js"></script>
+      <script>
+        let telegram = window.Telegram.WebApp;
+        let name_of_title = document.getElementById("title");
+        let submit_button = document.getElementById("submit");
+        telegram.expand()
+
+        submit_button.addEventListener("click", () => {
+          let name = document.getElementById("title").value;
+
+          let data = {
+            name: name;
+          }
+
+          telegram.sendData(JSON.stringify(data));
+          telegram.close();
+        });
+      </script>
+    </main>
+  </body>
+</html>
+>>>>>>> 6efbed77a2870e8ca5e1bf80c913096cfc599d05
