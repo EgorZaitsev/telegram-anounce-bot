@@ -26,11 +26,11 @@
       <script src="https://telegram.org/js/telegram-web-app.js"></script>
       <script>
         let telegram = window.Telegram.WebApp;
-        let name_of_title = document.querySelector("input__title");
-        let submit_button = document.querySelector("submit__button");
+        let name_of_title = document.querySelector(".input__title");
+        let submit_button = document.querySelector(".submit__button");
         telegram.expand();
 
-        submit_button.addEventListener("click", () => {
+        submit_button.addEventListener("click", (e) => {
           let name = name_of_title.value;
 
           let data = {
