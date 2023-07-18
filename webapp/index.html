@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Create anounce</title>
+    
   </head>
   <body>
     <main class="main">
@@ -17,30 +18,13 @@
             placeholder="Заголовок"
             class="input__title"
             required
-          >
+          />
         </fieldset>
-        <button type="submit" id="submit" class="submit__button">
-          Отправить
-        </button>
+        <button type="submit" class="submit__button">Отправить</button>
       </form>
-      <script src="https://telegram.org/js/telegram-web-app.js"></script>
-      <script>
-        let telegram = window.Telegram.WebApp;
-        let name_of_title = document.querySelector(".input__title");
-        let submit_button = document.querySelector(".submit__button");
-        telegram.expand();
-
-        submit_button.addEventListener("click", (e) => {
-          let name = name_of_title.value;
-
-          let data = {
-            name: name
-          };
-
-          telegram.sendData(JSON.stringify(data));
-          telegram.close();
-        });
-      </script>
     </main>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="https://egorzaitsev.github.io/telegram-anounce-bot/webapp/src/scripts/FormSend.js"></script>
+    <script src="https://egorzaitsev.github.io/telegram-anounce-bot/webapp/src/scripts/script.js"></script>
   </body>
 </html>
