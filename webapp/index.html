@@ -17,7 +17,7 @@
             placeholder="Заголовок"
             class="input__title"
             required
-          />
+          >
         </fieldset>
         <button type="submit" id="submit" class="submit__button">
           Отправить
@@ -34,7 +34,7 @@
           let name = name_of_title.value;
 
           let data = {
-            name: name,
+            name: name
           };
 
           telegram.sendData(JSON.stringify(data));
