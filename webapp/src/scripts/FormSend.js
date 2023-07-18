@@ -15,11 +15,10 @@ class FormSend {
 
   onSubmit(e) {
     const target = e.target;
-
     for (let i = 0; i < target.elements.length; i++) {
       let element = target.elements[i];
       if (element.tagName.toLowerCase() === "input") {
-        this.data[element.name] = element.value;
+        this.data[element.id] = element.value;
       }
     }
 
