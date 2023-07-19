@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/style.css" />
     <title>Create anounce</title>
-    
   </head>
   <body>
     <main class="main">
       <form class="form">
-        <fieldset class="fieldset__name">
+        <fieldset class="fieldset__text">
           <label for="title">Заголовок объявления</label>
           <input
             type="text"
@@ -19,12 +19,50 @@
             class="input__title"
             required
           />
+          <input type="date" id="date" placeholder="Дата" class="input__date" />
+          <select class="select">
+            <option value="monday">Понедельник</option>
+            <option value="tuesday">Вторник</option>
+            <option value="wednesday">Среда</option>
+            <option value="thursday">Четверг</option>
+            <option value="friday">Пятница</option>
+            <option value="saturday">Суббота</option>
+            <option value="sunday">Воскресенье</option>
+          </select>
+          <input
+            type="time"
+            id="time"
+            placeholder="Время события"
+            class="input__time"
+            step="60"
+          />
+          <label for="sendTo">Получатели</label>
+          <select id="sendTo">
+            <option value="@all">Все</option>
+          </select>
+          <label for="true-sound">С оповещением</label>
+          <input type="radio" value="true" id="true-sound" name="with-sound" />
+          <label for="false-sound">Без оповещения</label>
+          <input
+            type="radio"
+            value="false"
+            id="false-sound"
+            name="with-sound"
+            checked
+          />
+          <textarea
+            name=""
+            placeholder="Описание события"
+            cols="30"
+            rows="10"
+          ></textarea>
         </fieldset>
         <button type="submit" class="submit__button">Отправить</button>
       </form>
     </main>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script src="https://egorzaitsev.github.io/telegram-anounce-bot/webapp/src/scripts/FormSend.js"></script>
+    <script src="/src/scripts/datePreInput.js"></script>
     <script src="https://egorzaitsev.github.io/telegram-anounce-bot/webapp/src/scripts/script.js"></script>
   </body>
 </html>
