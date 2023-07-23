@@ -9,6 +9,7 @@ class FormSend {
     this.data = {};
 
     this.onSubmit = this.onSubmit.bind(this);
+    this.checkValidity = this.checkValidity.bind(this);
 
     this.form.addEventListener("submit", this.onSubmit);
   }
@@ -19,16 +20,31 @@ class FormSend {
       let element = target.elements[i];
       if (element.tagName.toLowerCase() === "select") {
         this.data[element.id] = element.value;
-      }
-      if (element.type === "checkbox") {
-        this.data[element.name] = element.value;
+        this.checkValidity(element);
       }
       if (element.tagName.toLowerCase() === "input") {
         this.data[element.id] = element.value;
+        this.checkValidity(element);
+      }
+      if (element.tagName.toLowerCase() === "textarea") {
+        this.data[element.id] = element.value;
+        this.checkValidity(element);
+      }
+      if (element.type === "checkbox") {
+        element.checked
+          ? (this.data[element.id] = `${element.checked}`)
+          : (this.data[element.id] = "false");
       }
     }
 
     telegram.sendData(JSON.stringify(this.data));
+    console.log(this.data);
     telegram.close();
+  }
+
+  checkValidity(element) {
+    if (element.value === "") {
+      this.data[element.id] = "none";
+    }
   }
 }
