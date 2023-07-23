@@ -20,6 +20,10 @@ body {
   font-family: "IBM Plex Mono", sans-serif;
 }
 
+.nice-form-group > input[type="text"]:required:not(:placeholder-shown):valid {
+  color: black;
+}
+
 .nice-form-group > label {
   color: white;
   margin-bottom: 0;
