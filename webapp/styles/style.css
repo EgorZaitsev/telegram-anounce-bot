@@ -1,4 +1,183 @@
-* {
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap");
+body {
+  font-family: "IBM Plex Mono", sans-serif;
+}
+
+.title {
+  text-align: center;
+  color: white;
   margin: 0;
-  padding: 0;
+  margin-top: 15px;
+}
+
+.input {
+  max-width: 250px;
+  max-height: 15px;
+}
+
+.input::-moz-placeholder {
+  font-family: "IBM Plex Mono", sans-serif;
+}
+
+.input::placeholder {
+  font-family: "IBM Plex Mono", sans-serif;
+}
+
+.nice-form-group > label {
+  color: white;
+  margin-bottom: 0;
+}
+
+.nice-form-group {
+  color: white;
+  margin-top: 0;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  z-index: 1;
+  background-color: rgba(14, 14, 14, 0.5);
+}
+
+.fieldset {
+  border: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: baseline;
+  gap: 10px;
+  padding: 25px;
+}
+
+.checkbox__wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.label__switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+}
+
+.label__switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 19px;
+  width: 19px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+html {
+  background-color: #090a0f;
+  background: radial-gradient(ellipse at bottom, #fff, #acd4e9);
+}
+
+body {
+  background: transparent;
+}
+
+head::before,
+head::after,
+body::before,
+body::after {
+  display: block;
+  font-size: 52px;
+  color: transparent;
+}
+
+head::before,
+head::after,
+body::before,
+body::after {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 3em;
+  height: 3em;
+  content: ".";
+  mix-blend-mode: screen;
+  animation: 44s -27s move infinite ease-in-out alternate;
+}
+
+body::before {
+  text-shadow: 0.3110767416em 1.2836450144em 7px hsla(317.4731356419, 100%, 50%, 0.9), 1.679842269em 0.4722145925em 7px hsla(261.9422288277, 100%, 50%, 0.9), 0.2454273131em 2.1244039603em 7px hsla(192.5511678417, 100%, 50%, 0.9), -0.2177696316em 1.9396383476em 7px hsla(191.1870994844, 100%, 50%, 0.9), -0.1105098255em 1.1251261854em 7px hsla(245.8494351831, 100%, 50%, 0.9), 0.9082819425em -0.4643670908em 7px hsla(319.9906509742, 100%, 50%, 0.9), -0.3405090834em 1.5441151566em 7px hsla(283.2862651073, 100%, 50%, 0.9), 0.1847738141em 1.6884569958em 7px hsla(141.8108321028, 100%, 50%, 0.9), 1.677150275em 0.9069240015em 7px hsla(285.63852492, 100%, 50%, 0.9), -0.0029678585em 2.2599795018em 7px hsla(247.7117204695, 100%, 50%, 0.9), 0.555004003em 0.8581853869em 7px hsla(205.8356695201, 100%, 50%, 0.9);
+  animation-duration: 44s;
+  animation-delay: -27s;
+}
+
+body::after {
+  text-shadow: 0.1101196674em 2.2049273544em 7px hsla(165.3044838044, 100%, 50%, 0.9), 0.9062621305em 1.7391154877em 7px hsla(137.174762998, 100%, 50%, 0.9), 0.2043530529em 1.7639072939em 7px hsla(25.9070034724, 100%, 50%, 0.9), 1.7959147924em 2.0129262319em 7px hsla(1.7592321881, 100%, 50%, 0.9), 2.2713875407em 0.9038955946em 7px hsla(14.8766713273, 100%, 50%, 0.9), 0.4173924444em 1.6367088368em 7px hsla(358.1612502796, 100%, 50%, 0.9), 2.0437729014em 2.0191968475em 7px hsla(102.838437502, 100%, 50%, 0.9), -0.1660758802em 0.9465110947em 7px hsla(223.6928831061, 100%, 50%, 0.9), -0.3614617814em 0.102116819em 7px hsla(115.9076249944, 100%, 50%, 0.9), -0.163757387em 1.7087468915em 7px hsla(277.920773341, 100%, 50%, 0.9), 1.3455578899em 0.5657857687em 7px hsla(284.2624448798, 100%, 50%, 0.9);
+  animation-duration: 43s;
+  animation-delay: -32s;
+}
+
+head::before {
+  text-shadow: 2.3055622292em 1.0882717486em 7px hsla(292.934849228, 100%, 50%, 0.9), -0.1127839813em 0.4287183555em 7px hsla(355.0700385093, 100%, 50%, 0.9), 2.0434137875em 2.4421529301em 7px hsla(70.2240139445, 100%, 50%, 0.9), -0.3548847537em 2.2493335629em 7px hsla(292.8774925427, 100%, 50%, 0.9), 0.2981680018em 0.4097322886em 7px hsla(169.7729920086, 100%, 50%, 0.9), -0.359947832em 0.8702014792em 7px hsla(319.8981690319, 100%, 50%, 0.9), 0.7725003888em 1.2382170349em 7px hsla(40.567698572, 100%, 50%, 0.9), 1.4080938692em 0.0242873096em 7px hsla(183.6320994201, 100%, 50%, 0.9), -0.3858081145em 1.7441496393em 7px hsla(249.4816172502, 100%, 50%, 0.9), 1.9996656864em 0.6969361334em 7px hsla(88.6607214699, 100%, 50%, 0.9), 0.4645148675em 2.2525614011em 7px hsla(282.1115443426, 100%, 50%, 0.9);
+  animation-duration: 42s;
+  animation-delay: -23s;
+}
+
+head::after {
+  text-shadow: 0.5645570241em 0.5604998501em 7px hsla(89.0366899926, 100%, 50%, 0.9), 0.9281815695em 2.1091866235em 7px hsla(203.7115953269, 100%, 50%, 0.9), 1.9010611213em 0.298865948em 7px hsla(313.8067106785, 100%, 50%, 0.9), 1.9716996987em 0.0909572536em 7px hsla(289.9471027396, 100%, 50%, 0.9), 2.2675590744em 0.872941735em 7px hsla(307.5843256988, 100%, 50%, 0.9), 0.6608149287em 1.207891997em 7px hsla(116.5240270632, 100%, 50%, 0.9), 2.2117813137em -0.2729979806em 7px hsla(33.4775686952, 100%, 50%, 0.9), 1.9934154083em 2.0014438943em 7px hsla(277.6503797395, 100%, 50%, 0.9), 1.888524601em 1.5428424938em 7px hsla(339.5246850782, 100%, 50%, 0.9), 1.9609430616em -0.2432102394em 7px hsla(123.9588528556, 100%, 50%, 0.9), 1.2595065328em 0.5769210764em 7px hsla(296.3775352955, 100%, 50%, 0.9);
+  animation-duration: 41s;
+  animation-delay: -19s;
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg) scale(12) translateX(-20px);
+  }
+  to {
+    transform: rotate(360deg) scale(18) translateX(20px);
+  }
 }/*# sourceMappingURL=style.css.map */

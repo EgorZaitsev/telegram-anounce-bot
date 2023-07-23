@@ -17,6 +17,12 @@ class FormSend {
     const target = e.target;
     for (let i = 0; i < target.elements.length; i++) {
       let element = target.elements[i];
+      if (element.tagName.toLowerCase() === "select") {
+        this.data[element.id] = element.value;
+      }
+      if (element.type === "checkbox") {
+        this.data[element.name] = element.value;
+      }
       if (element.tagName.toLowerCase() === "input") {
         this.data[element.id] = element.value;
       }

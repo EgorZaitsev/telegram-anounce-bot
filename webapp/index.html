@@ -4,23 +4,37 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/nice-forms.css@0.1.7/dist/nice-forms.css"
+    />
+
     <link rel="stylesheet" href="/styles/style.css" />
+
     <title>Create anounce</title>
   </head>
   <body>
     <main class="main">
       <form class="form">
-        <fieldset class="fieldset__text">
-          <label for="title">Заголовок объявления</label>
+        <h2 class="title">Создание события</h2>
+        <fieldset class="fieldset nice-form-group">
+          <label class="label" for="title">Заголовок события</label>
           <input
             type="text"
             id="title"
             placeholder="Заголовок"
-            class="input__title"
+            class="input input__title"
             required
           />
-          <input type="date" id="date" placeholder="Дата" class="input__date" />
-          <select class="select">
+          <label class="label" for="date">Дата события</label>
+          <input
+            type="date"
+            id="date"
+            placeholder="Дата"
+            class="input input__date"
+          />
+          <label class="label" for="weekday">День события</label>
+          <select class="select" id="weekday">
             <option value="monday">Понедельник</option>
             <option value="tuesday">Вторник</option>
             <option value="wednesday">Среда</option>
@@ -29,35 +43,52 @@
             <option value="saturday">Суббота</option>
             <option value="sunday">Воскресенье</option>
           </select>
+          <label class="label" for="time">Время события</label>
           <input
             type="time"
             id="time"
             placeholder="Время события"
-            class="input__time"
+            class="input input__time"
             step="60"
           />
           <label for="sendTo">Получатели</label>
           <select id="sendTo">
             <option value="@all">Все</option>
           </select>
-          <label for="true-sound">С оповещением</label>
-          <input type="radio" value="true" id="true-sound" name="with-sound" />
-          <label for="false-sound">Без оповещения</label>
-          <input
-            type="radio"
-            value="false"
-            id="false-sound"
-            name="with-sound"
-            checked
-          />
+          <div class="checkbox__wrapper">
+            <p class="label">С оповещением</p>
+            <label class="label label__checkbox label__switch" for="with-sound">
+              <input
+                class="checkbox"
+                type="checkbox"
+                value="true"
+                id="with-sound"
+                name="with-sound"
+              />
+              <span class="slider round"></span>
+            </label>
+          </div>
+          <div class="checkbox__wrapper">
+            <p>Повторяющееся событие</p>
+            <label class="label__checkbox label__switch" for="repeated">
+              <input
+                class="checkbox"
+                type="checkbox"
+                value="true"
+                id="repeated"
+                name="repeated"
+              />
+              <span class="slider round"></span>
+            </label>
+          </div>
           <textarea
-            name=""
+            class="input input__textarea"
             placeholder="Описание события"
             cols="30"
             rows="10"
           ></textarea>
+          <button type="submit" class="submit__button">Создать событие</button>
         </fieldset>
-        <button type="submit" class="submit__button">Отправить</button>
       </form>
     </main>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
