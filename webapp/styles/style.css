@@ -1,26 +1,30 @@
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap");
 body {
-  font-family: "IBM Plex Mono", sans-serif;
+  font-family: "Didact Gothic", sans-serif;
+}
+
+p {
+  margin: 0;
 }
 
 .title {
   text-align: center;
-  color: white;
+  color: black;
   margin: 0;
   margin-top: 15px;
 }
 
 .input {
-  max-width: 250px;
+  max-width: 200px;
   max-height: 15px;
 }
 
 .input::-moz-placeholder {
-  font-family: "IBM Plex Mono", sans-serif;
+  font-family: "Didact Gothic", sans-serif;
 }
 
 .input::placeholder {
-  font-family: "IBM Plex Mono", sans-serif;
+  font-family: "Didact Gothic", sans-serif;
 }
 
 .nice-form-group > input[type=text]:required:not(:-moz-placeholder-shown):valid {
@@ -32,12 +36,12 @@ body {
 }
 
 .nice-form-group > label {
-  color: white;
+  color: black;
   margin-bottom: 0;
 }
 
 .nice-form-group {
-  color: white;
+  color: black;
   margin-top: 0;
 }
 
@@ -49,8 +53,10 @@ body {
 }
 
 .form {
+  box-shadow: 0px 0px 34px -3px rgba(40, 69, 92, 0.2);
   z-index: 1;
-  background-color: rgba(14, 14, 14, 0.5);
+  background-color: rgba(240, 240, 240, 0.5);
+  border-radius: 25px;
 }
 
 .fieldset {
@@ -61,6 +67,28 @@ body {
   align-items: baseline;
   gap: 10px;
   padding: 25px;
+}
+
+.submit__button {
+  height: 30px;
+  width: 160px;
+  background-color: rgb(240, 240, 240);
+  border-radius: 15px;
+  border: 0;
+  transition: background-color ease 0.5s;
+  transition: border ease 0.2s;
+}
+.submit__button:hover {
+  transition: background-color ease 0.5s;
+  background-color: rgba(209, 209, 209, 0.9);
+  transition: border ease 0.2s;
+  border: 0;
+}
+.submit__button:active {
+  transition: border ease 0.2s;
+  transition: background-color ease 0.1s;
+  background-color: rgba(209, 209, 209, 0.9);
+  border: 1px solid rgba(95, 95, 95, 0.3);
 }
 
 .checkbox__wrapper {
@@ -123,69 +151,4 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
-}
-
-html {
-  background-color: #090a0f;
-  background: radial-gradient(ellipse at bottom, #fff, #acd4e9);
-}
-
-body {
-  background: transparent;
-}
-
-head::before,
-head::after,
-body::before,
-body::after {
-  display: block;
-  font-size: 52px;
-  color: transparent;
-}
-
-head::before,
-head::after,
-body::before,
-body::after {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 3em;
-  height: 3em;
-  content: ".";
-  mix-blend-mode: screen;
-  animation: 44s -27s move infinite ease-in-out alternate;
-}
-
-body::before {
-  text-shadow: 0.4239334548em 1.3970964208em 7px hsla(3.2852952275, 100%, 50%, 0.9), 0.361593812em -0.0590382464em 7px hsla(238.7968013669, 100%, 50%, 0.9), 1.5643007405em 0.53969297em 7px hsla(194.5059608167, 100%, 50%, 0.9), 0.0506017153em 0.6532657539em 7px hsla(76.3843551445, 100%, 50%, 0.9), 0.2736513925em 0.9795179508em 7px hsla(130.2444811105, 100%, 50%, 0.9), 2.0592365163em -0.2382455235em 7px hsla(42.8483028099, 100%, 50%, 0.9), 1.2290683868em -0.1542431297em 7px hsla(126.8435452541, 100%, 50%, 0.9), 0.6142654763em 2.1401369186em 7px hsla(252.6470112373, 100%, 50%, 0.9), -0.2177753593em -0.4952558262em 7px hsla(263.7177789922, 100%, 50%, 0.9), 1.3257164212em -0.4354674289em 7px hsla(113.5162271284, 100%, 50%, 0.9), -0.1208867579em 0.0291620611em 7px hsla(116.2709873601, 100%, 50%, 0.9);
-  animation-duration: 44s;
-  animation-delay: -27s;
-}
-
-body::after {
-  text-shadow: 1.1486073057em 1.6541831642em 7px hsla(251.2402241018, 100%, 50%, 0.9), 0.5794783888em 2.3493789847em 7px hsla(174.902808333, 100%, 50%, 0.9), 2.2078746823em 1.8731685829em 7px hsla(182.0195392702, 100%, 50%, 0.9), 0.4457161809em 1.3272482001em 7px hsla(48.6704169193, 100%, 50%, 0.9), 1.0215414362em 1.5854743981em 7px hsla(309.3461575109, 100%, 50%, 0.9), 0.5330389247em -0.3220917402em 7px hsla(352.138452985, 100%, 50%, 0.9), 1.5211733634em 2.3941598994em 7px hsla(347.8621964964, 100%, 50%, 0.9), 0.0501425928em 0.5644670177em 7px hsla(163.7201929589, 100%, 50%, 0.9), 1.346600306em 0.450217863em 7px hsla(76.853956192, 100%, 50%, 0.9), -0.2012678997em 0.9936504299em 7px hsla(161.0093198746, 100%, 50%, 0.9), 0.0282310696em 1.4244728023em 7px hsla(182.5999847154, 100%, 50%, 0.9);
-  animation-duration: 43s;
-  animation-delay: -32s;
-}
-
-head::before {
-  text-shadow: 0.1942456429em 0.7508153477em 7px hsla(353.8148116107, 100%, 50%, 0.9), 0.6847756937em 1.3917052447em 7px hsla(263.1167863854, 100%, 50%, 0.9), -0.2386770078em 2.3734223885em 7px hsla(169.9139760643, 100%, 50%, 0.9), 0.1995622083em 1.6512145842em 7px hsla(10.7323785048, 100%, 50%, 0.9), 2.2311651517em 1.1313607593em 7px hsla(263.6979182006, 100%, 50%, 0.9), 2.0644564327em 0.5238915245em 7px hsla(74.744913542, 100%, 50%, 0.9), 2.4729313698em 1.9961413558em 7px hsla(205.7400969206, 100%, 50%, 0.9), 2.1249065148em 2.0214537158em 7px hsla(208.6157632055, 100%, 50%, 0.9), 1.4840804035em 0.3627741773em 7px hsla(242.7674373995, 100%, 50%, 0.9), 1.9504837526em 2.2835631001em 7px hsla(31.0738491763, 100%, 50%, 0.9), 0.2514654637em 2.1976219491em 7px hsla(267.3982183979, 100%, 50%, 0.9);
-  animation-duration: 42s;
-  animation-delay: -23s;
-}
-
-head::after {
-  text-shadow: 1.9880168515em 1.6963612989em 7px hsla(311.3238156642, 100%, 50%, 0.9), 0.2856190722em -0.0328404693em 7px hsla(129.2820130472, 100%, 50%, 0.9), 1.543543871em 0.1145379869em 7px hsla(276.2415376571, 100%, 50%, 0.9), 2.1898908916em -0.1920690894em 7px hsla(240.1761245205, 100%, 50%, 0.9), 2.1320915149em 1.4842888904em 7px hsla(296.939446664, 100%, 50%, 0.9), -0.0892803611em 1.0361992538em 7px hsla(67.0340921964, 100%, 50%, 0.9), -0.4622421197em 1.3438108067em 7px hsla(285.8961152707, 100%, 50%, 0.9), 0.3307581185em 2.073544265em 7px hsla(350.9089591479, 100%, 50%, 0.9), 1.4084194314em 2.262939819em 7px hsla(120.9987454063, 100%, 50%, 0.9), 0.5676210767em 1.9440059182em 7px hsla(343.9112733301, 100%, 50%, 0.9), 0.8125376683em 0.3257211786em 7px hsla(183.8617675584, 100%, 50%, 0.9);
-  animation-duration: 41s;
-  animation-delay: -19s;
-}
-
-@keyframes move {
-  from {
-    transform: rotate(0deg) scale(12) translateX(-20px);
-  }
-  to {
-    transform: rotate(360deg) scale(18) translateX(20px);
-  }
 }/*# sourceMappingURL=style.css.map */

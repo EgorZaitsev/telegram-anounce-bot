@@ -1,23 +1,27 @@
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap");
 
 body {
-  font-family: "IBM Plex Mono", sans-serif;
+  font-family: "Didact Gothic", sans-serif;
+}
+
+p {
+  margin: 0;
 }
 
 .title {
   text-align: center;
-  color: white;
+  color: black;
   margin: 0;
   margin-top: 15px;
 }
 
 .input {
-  max-width: 250px;
+  max-width: 200px;
   max-height: 15px;
 }
 
 .input::placeholder {
-  font-family: "IBM Plex Mono", sans-serif;
+  font-family: "Didact Gothic", sans-serif;
 }
 
 .nice-form-group > input[type="text"]:required:not(:placeholder-shown):valid {
@@ -25,12 +29,12 @@ body {
 }
 
 .nice-form-group > label {
-  color: white;
+  color: black;
   margin-bottom: 0;
 }
 
 .nice-form-group {
-  color: white;
+  color: black;
   margin-top: 0;
 }
 
@@ -42,11 +46,10 @@ body {
 }
 
 .form {
+  box-shadow: 0px 0px 34px -3px rgba(40, 69, 92, 0.2);
   z-index: 1;
-  background-color: rgba(14, 14, 14, 0.5);
-}
-
-.label {
+  background-color: rgba(240, 240, 240, 0.5);
+  border-radius: 25px;
 }
 
 .fieldset {
@@ -57,6 +60,29 @@ body {
   align-items: baseline;
   gap: 10px;
   padding: 25px;
+}
+
+.submit__button {
+  height: 30px;
+  width: 160px;
+  background-color: rgb(240, 240, 240);
+  border-radius: 15px;
+  border: 0;
+  transition: background-color ease 0.5s;
+  transition: border ease 0.2s;
+  &:hover {
+    transition: background-color ease 0.5s;
+    background-color: rgba(209, 209, 209, 0.9);
+    transition: border ease 0.2s;
+    border: 0;
+  }
+  &:active {
+    transition: border ease 0.2s;
+
+    transition: background-color ease 0.1s;
+    background-color: rgba(209, 209, 209, 0.9);
+    border: 1px solid rgba(95, 95, 95, 0.3);
+  }
 }
 
 .checkbox__wrapper {
@@ -123,83 +149,4 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
-}
-
-html {
-  background-color: #090a0f;
-  background: radial-gradient(ellipse at bottom, #fff, #acd4e9);
-}
-
-body {
-  background: transparent;
-}
-
-@mixin dots($count) {
-  $text-shadow: ();
-  @for $i from 0 through $count {
-    $text-shadow: $text-shadow,
-      (-0.5+ (random()) * 3) +
-        em
-        (-0.5+ (random()) * 3) +
-        em
-        7px
-        hsla(random() * 360, 100%, 50%, 0.9);
-  }
-  text-shadow: $text-shadow;
-}
-
-head::before,
-head::after,
-body::before,
-body::after {
-  display: block;
-  font-size: 52px;
-  color: transparent;
-}
-
-head::before,
-head::after,
-body::before,
-body::after {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 3em;
-  height: 3em;
-  content: ".";
-  mix-blend-mode: screen;
-  animation: 44s -27s move infinite ease-in-out alternate;
-}
-
-body::before {
-  @include dots(10);
-  animation-duration: 44s;
-  animation-delay: -27s;
-}
-
-body::after {
-  @include dots(10);
-  animation-duration: 43s;
-  animation-delay: -32s;
-}
-
-head::before {
-  @include dots(10);
-  animation-duration: 42s;
-  animation-delay: -23s;
-}
-
-head::after {
-  @include dots(10);
-  animation-duration: 41s;
-  animation-delay: -19s;
-}
-
-@keyframes move {
-  from {
-    transform: rotate(0deg) scale(12) translateX(-20px);
-  }
-  to {
-    transform: rotate(360deg) scale(18) translateX(20px);
-  }
 }
