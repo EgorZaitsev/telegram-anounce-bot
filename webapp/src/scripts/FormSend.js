@@ -43,6 +43,9 @@ class FormSend {
   }
 
   checkValidity(element) {
+    if (element.disabled) {
+      this.data[element.id] = "none";
+    }
     if (element.value === "") {
       this.data[element.id] = "none";
     }

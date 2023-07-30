@@ -29,14 +29,20 @@
             class="input input__title"
             required
           />
-          <label class="label" for="date">Дата события</label>
+          <label class="label" for="date">
+            <input type="checkbox" class="checker" checked />
+            Дата события
+          </label>
           <input
             type="date"
             id="date"
             placeholder="Дата"
             class="input input__date"
           />
-          <label class="label" for="weekday">День события</label>
+          <label class="label" for="weekday">
+            <input type="checkbox" class="checker" checked />
+            День события
+          </label>
           <select class="select" id="weekday">
             <option value="monday">Понедельник</option>
             <option value="tuesday">Вторник</option>
@@ -46,7 +52,10 @@
             <option value="saturday">Суббота</option>
             <option value="sunday">Воскресенье</option>
           </select>
-          <label class="label" for="time">Время события</label>
+          <label class="label" for="time">
+            <input type="checkbox" class="checker" checked />
+            Время события
+          </label>
           <input
             type="time"
             id="time"
@@ -94,6 +103,7 @@
       </form>
     </main>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="https://egorzaitsev.github.io/telegram-anounce-bot/webapp/src/scripts/checkFields.js"></script>
     <script src="https://egorzaitsev.github.io/telegram-anounce-bot/webapp/src/scripts/FormSend.js"></script>
     <script src="https://egorzaitsev.github.io/telegram-anounce-bot/webapp/src/scripts/datePreInput.js"></script>
     <script src="https://egorzaitsev.github.io/telegram-anounce-bot/webapp/src/scripts/script.js"></script>
