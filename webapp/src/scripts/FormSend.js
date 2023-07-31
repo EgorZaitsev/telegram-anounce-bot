@@ -16,6 +16,7 @@ class FormSend {
   }
 
   onSubmit(e) {
+    e.preventDefault();
     const target = e.target;
     for (let i = 0; i < target.elements.length; i++) {
       let element = target.elements[i];
@@ -29,13 +30,19 @@ class FormSend {
     if (element.tagName.toLowerCase() === "select") {
       this.data[element.id] = element.value;
       this.checkValidity(element);
-    } else if (element.tagName.toLowerCase() === "input") {
+    }
+    if (
+      element.tagName.toLowerCase() === "input" &&
+      !element.classList.contains("checker")
+    ) {
       this.data[element.id] = element.value;
       this.checkValidity(element);
-    } else if (element.tagName.toLowerCase() === "textarea") {
+    }
+    if (element.tagName.toLowerCase() === "textarea") {
       this.data[element.id] = element.value;
       this.checkValidity(element);
-    } else if (element.type === "checkbox") {
+    }
+    if (element.type === "checkbox" && !element.classList.contains("checker")) {
       element.checked
         ? (this.data[element.id] = `${element.checked}`)
         : (this.data[element.id] = "false");
