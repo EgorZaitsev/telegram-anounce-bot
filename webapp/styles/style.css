@@ -121,6 +121,10 @@ p {
   transition: 0.4s;
 }
 
+.repeated:disabled + .slider {
+  cursor: not-allowed;
+}
+
 .slider:before {
   position: absolute;
   content: "";

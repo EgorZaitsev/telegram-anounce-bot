@@ -115,6 +115,9 @@ p {
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
+.repeated:disabled + .slider {
+  cursor: not-allowed;
+}
 
 .slider:before {
   position: absolute;

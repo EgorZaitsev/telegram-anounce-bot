@@ -10,6 +10,7 @@ class FormSend {
 
     this.onSubmit = this.onSubmit.bind(this);
     this.checkValidity = this.checkValidity.bind(this);
+    this.checkElement = this.checkElement.bind(this);
 
     this.form.addEventListener("submit", this.onSubmit);
   }
@@ -18,28 +19,27 @@ class FormSend {
     const target = e.target;
     for (let i = 0; i < target.elements.length; i++) {
       let element = target.elements[i];
-      if (element.tagName.toLowerCase() === "select") {
-        this.data[element.id] = element.value;
-        this.checkValidity(element);
-      }
-      if (element.tagName.toLowerCase() === "input") {
-        this.data[element.id] = element.value;
-        this.checkValidity(element);
-      }
-      if (element.tagName.toLowerCase() === "textarea") {
-        this.data[element.id] = element.value;
-        this.checkValidity(element);
-      }
-      if (element.type === "checkbox") {
-        element.checked
-          ? (this.data[element.id] = `${element.checked}`)
-          : (this.data[element.id] = "false");
-      }
+      this.checkElement(element);
     }
-
     telegram.sendData(JSON.stringify(this.data));
-    console.log(this.data);
     telegram.close();
+  }
+
+  checkElement(element) {
+    if (element.tagName.toLowerCase() === "select") {
+      this.data[element.id] = element.value;
+      this.checkValidity(element);
+    } else if (element.tagName.toLowerCase() === "input") {
+      this.data[element.id] = element.value;
+      this.checkValidity(element);
+    } else if (element.tagName.toLowerCase() === "textarea") {
+      this.data[element.id] = element.value;
+      this.checkValidity(element);
+    } else if (element.type === "checkbox") {
+      element.checked
+        ? (this.data[element.id] = `${element.checked}`)
+        : (this.data[element.id] = "false");
+    }
   }
 
   checkValidity(element) {
